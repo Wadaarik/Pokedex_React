@@ -1,11 +1,10 @@
 import React from 'react';
-import './newComponent.css';
 import data from "../data.json";
 console.log(data);
 
 
 const Unit_pokemon = props => {
-    const { name, sprites, height, weight, location_area_encounters, types, stats, moves } = props;
+    const { id, sprites, name, height, weight, location_area_encounters, types, stats, moves } = props;
     return(
         <ul>
             <li>
