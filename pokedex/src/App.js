@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './poke_ball_icon.png';
+import './App.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Pokemon_choice from './pages/Pokemons';
 import Pokemon_Details from './pages/Pokemon_Details';
 
 class App extends React.Component{
@@ -16,6 +15,9 @@ class App extends React.Component{
                   <Link to="/">Home</Link>
                 </li>
                 <li>
+                  <img src={logo} alt='logo'/>
+                </li>
+                <li>
                   <Link to="/Pokemon_Details">Pokedex</Link>
                 </li>
               </ul>
@@ -26,12 +28,13 @@ class App extends React.Component{
                 <Pokemon_Details />
               </Route>
               <Route path="/">
-                <h2>Home</h2>
+                <h1>Home</h1>
               </Route>
 
             </Switch>
           </div>
         </Router>
+
     );
   }
 }

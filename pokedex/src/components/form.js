@@ -3,18 +3,17 @@ import React from 'react';
 
 const Form = ({ handleSubmit, value }) =>  (
 
-    <>
+    <div>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="Filtrer"></label>
+            <label htmlFor="Search"></label>
             Nom du Pokemon<br/>
             <input
-                id="filter"
+                id="search"
                 type="text"
-                name="filter"
+                name="search"
             />
-            <input type="submit" value="Filtrer"/>
+            <input type="submit" value="Search Pokemon"/>
         </form>
-        <p>{value}</p>
-    </>
+    </div>
 );
 export default Form;

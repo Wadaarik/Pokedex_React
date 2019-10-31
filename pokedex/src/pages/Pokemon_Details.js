@@ -1,25 +1,24 @@
 import React from 'react';
 import Loader from '../components/Loader';
+import Form from "../components/form";
 
 class Pokemon_Details extends React.Component {
-    constructor (props){
+    constructor(props){
         super(props);
         this.state = {
             isLoading: false,
+            value: '',
             data: [],
         };
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-
-    async componentDidMount() {
+    async componentDidMount(index) {
         this.setState({isLoading: true});
         try {
             const res = await fetch(
-                'https://pokeapi.co/api/v2/pokemon/1/'
+                'https://pokeapi.co/api/v2/pokemon/'+index
             );
             const data = await res.json();
-
             this.setState({data: data, isLoading: false});
 
         } catch (err) {
@@ -29,17 +28,24 @@ class Pokemon_Details extends React.Component {
         }
     }
 
+    handleSubmit(event) {
+        console.log('Hello world');
+        event.preventDefault();
+        this.componentDidMount(this.state.value);
+        this.setState({
+            value: new FormData(event.currentTarget).get('search'),
+        });
+
+    }
 
     render() {
         const {isLoading, data} = this.state;
         return (
                 <div>
-                    <h2>Pokemon</h2>
-                    {isLoading ? <Loader/> :
+                    <h1>Pokemon</h1>
+                    <Form handleSubmit={this.handleSubmit} value={this.state.value}/>
+                    {isLoading ? <Loader/>  :
                         <ul>
-                            <li>
-                                Nom du pokémon : {data.sprites}
-                            </li>
                             <li>
                                 Nom du pokémon : {data.name}
                             </li>
