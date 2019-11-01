@@ -2,7 +2,19 @@
   margin: 0;
   padding: 0;
 }
-
+@font-face {
+  font-family: pokemon;
+  src: url("./font/pokemon_classic.ttf");
+}
+body{
+  font-family: pokemon;
+  background: url("wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  min-height: 1050px;
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
 }
@@ -14,6 +26,7 @@ nav{
   top: 0;
   background: linear-gradient(#00B7FF, #FFFFC7);
   border-bottom: solid 8px black;
+  z-index: 2;
 }
 
 ul{
@@ -30,10 +43,10 @@ li{
 li a{
   text-decoration: none;
   color: white;
+  text-shadow: 2px 2px rgba(91, 91, 91, 0.71);
   padding: 14px;
-  border: solid 8px black;
-  -webkit-transition: background-color 2s;
-  transition: background-color 2s;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
 }
 li a:hover{
   background-color: black;
@@ -44,21 +57,78 @@ li img{
   margin-top: 62px;
 }
 
-.App-logo {
-  height: 40vmin;
+.container{
+  margin-top: 130px;
+  border-radius: 15px;
+  box-shadow: 5px 5px rgba(61, 61, 61, 0.8);
+  background: #ffffff;
+  max-width: 80%;
+  position: absolute;
+  left: 10%;
+  padding: 15px 20px;
+  z-index: 1;
+}
+.container p{
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px 160px rgba(31, 119, 43, 0.42);
+  background: #ffffff;
+  margin-top: 10px;
+  padding: 15px 20px;
+  border: solid 8px black;
+}
+.container img{
+  width: 90%;
+  max-width: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form_result{
+  margin-top: 130px;
+  border-radius: 15px;
+  box-shadow: 5px 5px rgba(61, 61, 61, 0.8);
+  background: #ffffff;
+  max-width: 80%;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  padding: 15px 20px;
+  z-index: 1;
+}
+
+.form_result ul{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #09d3ac;
+.form_result input{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form_result .submit{
+  background: #dc0e23;
+  border: solid black 8px;
+  border-radius: 15px;
+  color: white;
+  font-family: pokemon;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+@media screen and (max-width: 600px){
+  li a{
+    font-size: x-small;
+    padding-top: 20px;
+  }
+  li img{
+    margin-left: 20px;
+  }
+
+
+  .container, .form_result{
+    margin: 150px 0;
+    left: 4%;
+  }
 }

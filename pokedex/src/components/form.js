@@ -12,7 +12,7 @@ const Form = ({ handleSubmit, value }) =>  (
                 type="text"
                 name="search"
             />
-            <input type="submit" value="Search Pokemon"/>
+            <input className='submit' type="submit" value="Search Pokemon"/>
         </form>
     </div>
 );

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './poke_ball_icon.png';
+import pokedex from './pokedex.png';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Pokemon_Details from './pages/Pokemon_Details';
@@ -28,7 +29,13 @@ class App extends React.Component{
                 <Pokemon_Details />
               </Route>
               <Route path="/">
-                <h1>Home</h1>
+                <div className='container'>
+                  <h1>Le pokédex</h1>
+                  <img src={pokedex}/>
+                  <p>Le Pokédex est un outil de recherche sur les Pokémon.
+                    <br/> Il enregistre et apprend aux dresseurs les caractéristiques de chaque Pokémon que l'on rencontre ou capture.
+                    <br/>Au fil des générations, il est de plus en plus évolué.</p>
+                </div>
               </Route>
 
             </Switch>

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.scss';
 import Loader from '../components/Loader';
 import Form from "../components/form";
 
@@ -41,7 +42,7 @@ class Pokemon_Details extends React.Component {
     render() {
         const {isLoading, data} = this.state;
         return (
-                <div>
+                <div className='form_result'>
                     <h1>Pokemon</h1>
                     <Form handleSubmit={this.handleSubmit} value={this.state.value}/>
                     {isLoading ? <Loader/>  :
