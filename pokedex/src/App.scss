@@ -10,6 +10,7 @@ body{
   font-family: pokemon;
   background: url("wallpaper.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   min-height: 1050px;
@@ -115,6 +116,8 @@ li img{
   width: 100%;
   text-align: center;
   padding: 15px;
+  cursor: pointer;
+  outline: none;
 }
 
 @media screen and (max-width: 600px){
@@ -125,7 +128,6 @@ li img{
   li img{
     margin-left: 20px;
   }
-
 
   .container, .form_result{
     margin: 150px 0;

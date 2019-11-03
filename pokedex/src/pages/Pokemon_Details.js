@@ -29,6 +29,8 @@ class Pokemon_Details extends React.Component {
         }
     }
 
+
+
     handleSubmit(event) {
         console.log('Hello world');
         event.preventDefault();
@@ -45,21 +47,22 @@ class Pokemon_Details extends React.Component {
                 <div className='form_result'>
                     <h1>Pokemon</h1>
                     <Form handleSubmit={this.handleSubmit} value={this.state.value}/>
-                    {isLoading ? <Loader/>  :
-                        <ul>
-                            <li>
-                                Nom du pokémon : {data.name}
-                            </li>
-                            <li>
-                                N° du pokémon : {data.id}
-                            </li>
-                            <li>
-                                Taille du pokémon : {data.height} ft
-                            </li>
-                            <li>
-                                Poid du pokémon : {data.weight} pnd
-                            </li>
-                        </ul>
+                    {isLoading ? <Loader/> :
+                                <ul>
+                                    <li>
+                                        Nom du pokémon : {data.name}
+                                    </li>
+                                    <li>
+                                        N° du pokémon : {data.id}
+                                    </li>
+                                    <li>
+                                        Taille du pokémon : {data.height} ft
+                                    </li>
+                                    <li>
+                                        Poid du pokémon : {data.weight} pnd
+                                    </li>
+
+                                </ul>
                     }
                 </div>
         );
